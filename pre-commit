@@ -1,0 +1,13 @@
+#!/bin/sh
+
+regex='@talentship\.io$'
+email=$GIT_AUTHOR_EMAIL
+
+if [[ $email =~ $regex ]];
+then
+    echo "Your email $email satisfies git policies"
+    exit 0
+else
+    echo "Your email $email doesn't satisfies git policies"
+    exit 1
+fi
